@@ -48,7 +48,7 @@ export default function App(props) {
 	};
 
 	const handleClick = newWine => {
-		props.setMyFavs([...props.myFavs, { newWine }]);
+		props.setMyFavs([...props.myFavs, { ...newWine }]);
 		console.log(props.myFavs);
 	};
 
