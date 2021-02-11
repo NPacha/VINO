@@ -4,11 +4,11 @@ export default function WineInfo(props) {
 	return (
 		<>
 			<div className={'column'}>
-				<h1>Title: {props.wine.Name}</h1>
-				{/* <h2>Year Released: {props.wine.Year}</h2>
-				<div>
-					<img src={props.wine.Poster} alt={props.wine.Title} />
-				</div> */}
+				<p>Name: {props.wine.Name}</p>
+				<p>Country: {props.wine.Country}</p>
+				<p>Varietal: {props.wine.Varietal}</p>
+				<p>Vintage: {props.wine.vintage}</p>
+				<button>Add To MyFavs</button>
 			</div>{' '}
 			<br />
 		</>
