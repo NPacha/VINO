@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function WineInfo(props) {
 	return (
@@ -8,7 +8,6 @@ export default function WineInfo(props) {
 				<p>Country: {props.wine.Country}</p>
 				<p>Varietal: {props.wine.Varietal}</p>
 				<p>Vintage: {props.wine.vintage}</p>
-				<button>Add To MyFavs</button>
 			</div>{' '}
 			<br />
 		</>

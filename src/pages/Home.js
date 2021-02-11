@@ -7,10 +7,7 @@ export default function App(props) {
 		name: '',
 		searchURL: ''
 	});
-
 	const [wine, setWine] = useState([]);
-
-
 
 	useEffect(() => {
 		(async () => {
@@ -50,8 +47,13 @@ export default function App(props) {
 		});
 	};
 
+	const handleClick = newWine => {
+		props.setMyFavs([...props.myFavs, { newWine }]);
+		console.log(props.myFavs);
+	};
+
 	return (
-		<div className="AppPage">
+		<div className="HomePage">
 			<h2>My Wine App</h2>
 			<form onSubmit={handleSubmit}>
 				<input
@@ -65,7 +67,14 @@ export default function App(props) {
 			</form>
 			<div className={'Page'}>
 				{wine.map(item => {
-					return <WineInfo wine={item} key={item.id} />;
+					return (
+						<>
+							<WineInfo wine={item} key={item.id} />
+							<button onClick={() => handleClick({ item })}>
+								Add To MyFavs
+							</button>
+						</>
+					);
 				})}
 			</div>
 		</div>
