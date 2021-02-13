@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function MyFavs(props) {
 	return (
@@ -8,6 +9,9 @@ export default function MyFavs(props) {
 				return (
 					<>
 						<p key={item.id}>Name:{item['item'].Name}</p>
+						<Link to={`/myfavs/${item['item'].id}`}>
+							<button>Show Page</button>
+						</Link>
 					</>
 				);
 			})}

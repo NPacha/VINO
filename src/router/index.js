@@ -14,8 +14,13 @@ const AppRouter = () => {
 					<Route
 						key={key}
 						path={path}
-						component={() => (
-							<Component page={key} myFavs={myFavs} setMyFavs={setMyFavs} />
+						component={props => (
+							<Component
+								page={key}
+								myFavs={myFavs}
+								setMyFavs={setMyFavs}
+								{...props}
+							/>
 						)}
 					></Route>
 				))}

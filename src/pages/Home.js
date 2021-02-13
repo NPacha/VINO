@@ -69,7 +69,7 @@ export default function App(props) {
 				{wine.map(item => {
 					return (
 						<>
-							<WineInfo wine={item} key={item.id} />
+							<WineInfo wine={item} key={item._id} />
 							<button onClick={() => handleClick({ item })}>
 								Add To MyFavs
 							</button>
