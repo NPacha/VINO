@@ -1,7 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 export default function MyFavs(props) {
+	useEffect(() => {
+		// Immediately Invoked Function Expression
+		(async () => {
+			try {
+				const response = await fetch('/api/wines');
+				const data = await response.json();
+				props.setMyFavs(data);
+			} catch (error) {
+				console.error(error);
+			}
+		})();
+	}, []);
 	return (
 		<div className="MyFavs">
 			{props.myFavs.map(item => {
