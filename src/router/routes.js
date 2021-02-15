@@ -5,14 +5,14 @@ import ShowWine from '../pages/ShowWine';
 
 const routes = [
 	{
-		Component: ShowWine,
-		key: 'ShowWine',
-		path: '/myfavs/:id'
-	},
-	{
 		Component: MyFavs,
 		key: 'MyFavs',
 		path: '/myfavs'
+	},
+	{
+		Component: ShowWine,
+		key: 'ShowWine',
+		path: '/:id'
 	},
 	{
 		Component: About,

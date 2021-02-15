@@ -4,8 +4,6 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
 
 const AppRouter = () => {
-	const [myFavs, setMyFavs] = useState([]);
-
 	return (
 		<Router>
 			<NavBar routes={routes} />
@@ -14,14 +12,7 @@ const AppRouter = () => {
 					<Route
 						key={key}
 						path={path}
-						component={props => (
-							<Component
-								page={key}
-								myFavs={myFavs}
-								setMyFavs={setMyFavs}
-								{...props}
-							/>
-						)}
+						component={props => <Component page={key} {...props} />}
 					></Route>
 				))}
 			</Switch>

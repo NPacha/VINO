@@ -49,6 +49,7 @@ export default function App(props) {
 
 	const handleClick = async newWine => {
 		const body = JSON.stringify({
+			ref: newWine['item']._id,
 			Name: newWine['item'].Name,
 			Winery: newWine['item'].Winery,
 			vintage: newWine['item'].vintage,
@@ -66,8 +67,6 @@ export default function App(props) {
 				body: body
 			});
 			// const newWine = await response.json();
-			props.setMyFavs([...props.myFavs, { ...newWine }]);
-			console.log('line 70', props.myFavs);
 		} catch (error) {
 			console.error(error);
 		}

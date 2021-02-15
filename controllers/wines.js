@@ -36,6 +36,20 @@ wineController.get('/', async (req, res) => {
     }
 })
 
+/* Show */
+wineController.get('/:id', async (req, res) => {
+    try {
+        const foundWine = await Wine.findById(req.params.id)
+        res
+          .status(200)
+          .json(foundWine)
+    } catch (error) {
+        res 
+          .status(400)
+          .json(error)
+    }
+})
+
 //Update
 
 
