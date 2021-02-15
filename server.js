@@ -4,6 +4,7 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 const mongoose = require('mongoose');
 const path = require('path');
+const wineController = require('./controllers/wines');
 
 const MONGODB_URI = process.env.MONGODB_URI
 const db = mongoose.connection;
@@ -28,6 +29,7 @@ app.get('/test', (req, res)=>{
 		info: 'Not that much'
 	})
 })
+app.use('/api/wines', wineController); //this is the end point for the wine controller, this is the connection to the database
 /* Controller Ends here */
 //LISTENER
 

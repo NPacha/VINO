@@ -13,9 +13,15 @@ export default function ShowWine(props) {
 						props.match.params.id
 				); //Just like req.params on the backend....The location of where that params is on the front end for react.
 				const data = await response.json();
-				console.log(props.match.params.id);
-				console.log(data.items);
-				setWine(data.items);
+				console.log('props id', props.match.params.id);
+				console.log('data from api', data);
+				if (data.items.length > 1) {
+					console.log('line 19', data.items[1]);
+					setWine([...data.items[1]]);
+				} else {
+					setWine([...data.items]);
+				}
+				console.log(wine);
 			} catch (error) {
 				console.error(error);
 			}
@@ -30,12 +36,10 @@ export default function ShowWine(props) {
 					<>
 						<p>Name: {item.Name}</p>
 						<p>Winery: {item.Winery}</p>
-						<p>vintage: {item.vintage}</p>
+						<p>Vintage: {item.vintage}</p>
 						<p>Varietal: {item.Varietal}</p>
 						<p>Country: {item.Country}</p>
 						<p>Province: {item.Province}</p>
-
-						
 					</>
 				);
 			})}

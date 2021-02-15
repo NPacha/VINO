@@ -15,7 +15,7 @@ export default function App(props) {
 				try {
 					const response = await fetch(query.searchURL);
 					const data = await response.json();
-					console.log(data.items);
+					console.log('line 18', data.items);
 					await setWine(data.items);
 				} catch (error) {
 					console.error(error);
@@ -47,9 +47,30 @@ export default function App(props) {
 		});
 	};
 
-	const handleClick = newWine => {
-		props.setMyFavs([...props.myFavs, { ...newWine }]);
-		console.log(props.myFavs);
+	const handleClick = async newWine => {
+		const body = JSON.stringify({
+			Name: newWine['item'].Name,
+			Winery: newWine['item'].Winery,
+			vintage: newWine['item'].vintage,
+			Varietal: newWine['item'].Varietal,
+			Country: newWine['item'].Country,
+			Province: newWine['item'].Province
+		});
+
+		try {
+			const response = await fetch('/api/wines', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json'
+				},
+				body: body
+			});
+			// const newWine = await response.json();
+			props.setMyFavs([...props.myFavs, { ...newWine }]);
+			console.log('line 70', props.myFavs);
+		} catch (error) {
+			console.error(error);
+		}
 	};
 
 	return (

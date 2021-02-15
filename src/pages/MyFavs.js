@@ -6,10 +6,12 @@ export default function MyFavs(props) {
 		<div className="MyFavs">
 			{props.myFavs.map(item => {
 				console.log('line 7', props.myFavs);
+
 				return (
 					<>
-						<p key={item.id}>Name:{item['item'].Name}</p>
-						<Link to={`/myfavs/${item['item'].id}`}>
+						<p key={item._id}>Name:{item['item'].Name}</p>
+
+						<Link to={`/myfavs/${item['item']._id}`}>
 							<button>Show Page</button>
 						</Link>
 					</>
