@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/NavBar';
+import routes from '../router/routes.js';
 
 export default function ShowWine(props) {
 	const [wine, setWine] = useState([]);
@@ -36,6 +38,7 @@ export default function ShowWine(props) {
 
 	return (
 		<div className="MyFavs">
+			<NavBar routes={routes} />
 			{console.log('line 23', wine)}
 			{wine.map(item => {
 				return (
@@ -46,7 +49,11 @@ export default function ShowWine(props) {
 						<p>Varietal: {item.Varietal}</p>
 						<p>Country: {item.Country}</p>
 						<p>Province: {item.Province}</p>
-						<button onClick={handleDelete}>Delete Blog Post</button>
+						<p>My Tasting Notes: {item.MyTastingNotes}</p>
+						<button onClick={handleDelete}>Delete</button>
+						<Link to={`/${item._id}/edit`}>
+							<button>Edit Tasting Notes</button>
+						</Link>
 					</>
 				);
 			})}

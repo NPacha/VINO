@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 
+
 module.exports = env => {
 	return {
 		entry: {
@@ -31,7 +32,8 @@ module.exports = env => {
 						'sass-loader',
 						'postcss-loader'
 					]
-				}
+				},
+	
 			]
 		},
 		plugins: [
@@ -56,5 +58,6 @@ module.exports = env => {
 			usedExports: true,
 			sideEffects: true
 		}
+
 	};
 };

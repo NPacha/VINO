@@ -2,17 +2,14 @@ import Home from '../pages/Home';
 import About from '../pages/About';
 import MyFavs from '../pages/MyFavs';
 import ShowWine from '../pages/ShowWine';
+import LandingPage from '../pages/LandingPage';
+import UpdateNotes from '../pages/UpdateNotes';
 
 const routes = [
 	{
-		Component: MyFavs,
-		key: 'MyFavs',
-		path: '/myfavs'
-	},
-	{
-		Component: ShowWine,
-		key: 'ShowWine',
-		path: '/:id'
+		Component: Home,
+		key: 'Home',
+		path: '/home'
 	},
 	{
 		Component: About,
@@ -20,8 +17,24 @@ const routes = [
 		path: '/about'
 	},
 	{
-		Component: Home,
-		key: 'Home',
+		Component: MyFavs,
+		key: 'MyFavs',
+		path: '/myfavs'
+	},
+	{
+		Component: UpdateNotes,
+		key: 'UpdateNotes',
+		path: '/:id/edit'
+	},
+	{
+		Component: ShowWine,
+		key: 'ShowWine',
+		path: '/:id'
+	},
+
+	{
+		Component: LandingPage,
+		key: 'LandingPage',
 		path: '/'
 	}
 ];

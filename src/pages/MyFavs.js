@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import NavBar from '../components/NavBar';
+import routes from '../router/routes.js';
 
 export default function MyFavs(props) {
 	const [myFavs, setMyFavs] = useState([]);
@@ -19,13 +21,14 @@ export default function MyFavs(props) {
 
 	return (
 		<div className="MyFavs">
+			<NavBar routes={routes} />
 			{myFavs.map(item => {
 				return (
 					<>
 						<p key={item._id}>Name:{item.Name}</p>
 
 						<Link to={`/${item._id}`}>
-							<button>Show Page</button>
+							<button>See more</button>
 						</Link>
 					</>
 				);

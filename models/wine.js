@@ -7,7 +7,8 @@ const wineSchema = new Schema ({
     vintage: String,
     Varietal: String,
     Country: String, 
-    Province: String
+    Province: String,
+    MyTastingNotes: String
 
 })
 

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WineInfo from '../components/WineInfo';
+import NavBar from '../components/NavBar';
+import routes from '../router/routes.js';
 
 export default function App(props) {
 	const [query, updateQuery] = useState({
@@ -55,7 +57,8 @@ export default function App(props) {
 			vintage: newWine['item'].vintage,
 			Varietal: newWine['item'].Varietal,
 			Country: newWine['item'].Country,
-			Province: newWine['item'].Province
+			Province: newWine['item'].Province,
+			MyTastingNotes: ''
 		});
 
 		try {
@@ -74,6 +77,7 @@ export default function App(props) {
 
 	return (
 		<div className="HomePage">
+			<NavBar routes={routes} />
 			<h2>My Wine App</h2>
 			<form onSubmit={handleSubmit}>
 				<input
@@ -88,12 +92,12 @@ export default function App(props) {
 			<div className={'Page'}>
 				{wine.map(item => {
 					return (
-						<>
+						<div className={'winehome'}>
 							<WineInfo wine={item} key={item._id} />
 							<button onClick={() => handleClick({ item })}>
 								Add To MyFavs
 							</button>
-						</>
+						</div>
 					);
 				})}
 			</div>
