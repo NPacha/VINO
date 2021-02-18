@@ -2,27 +2,60 @@
 @import "reset";
 @import "grid";
 html{
-  height: 100vh;
+  /*height: 100vh;*/
 }
 
-body {
-  font-size: 16px;
-  height: 100%;
-  font-family: 'Montserrat', sans-serif;
-}
+// body {
+//   font-size: 12px;
+//   height: 100%;
+//   font-family: 'Montserrat', sans-serif;
+// }
 
 #app {
-  border: 1px solid black;
   margin: 0 auto;
   height: 100vh;
+  font-size: 12px;
   font-family: 'Montserrat', sans-serif;
   
   
 }
+.Page{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 
 .winehome {
-  background-color: lightgrey;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  box-shadow: black;
+  margin: 20px;
+  padding: 20px;
+  button {
+      display: inline-flex;
+      height: 40px;
+      width: 150px;
+      border: 1px solid #BFC0C0;
+      margin: 20px 20px 20px 20px;
+      color: black;
+      background-color: white;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: .8em;
+      letter-spacing: 1.5px;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+  
 }
+
+
 
 
 
@@ -30,9 +63,24 @@ body {
 .LandingPage {
  
   height: 100vh;
-  background-image: url("https://i.imgur.com/xS47yID.jpg");
   background-size: cover;
   text-align: center;
+  button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 1px solid black;
+    margin: 20px 20px 20px 20px;
+    color: black;
+    background-color: #f5f5f5;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
   
 
 }
@@ -41,11 +89,81 @@ body {
   display: flex;
   justify-content: space-around;
   width: 100%;
+  background-color: #f5f5f5;
   
 }
 
 .HomePage {
   text-align: center;
+  // background-size: cover;
+  // background-position: 50% 29%;
+  
+  h2{
+    font-size: 50px;
+  }
+  form{
+    input {
+      margin: 10px;
+      padding: 3px;
+    }
+  }
+  button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: 1px solid #BFC0C0;
+    margin: 20px 20px 20px 20px;
+    color: black;
+    background-color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: .8em;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+}
+
+
+button {
+  display: inline-flex;
+  height: 40px;
+  width: 150px;
+  border: 1px solid #BFC0C0;
+  margin: 20px 20px 20px 20px;
+  color: black;
+  background-color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: .8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+.AboutPage {
+  text-align: center;
+  padding: 20px;
+}
+
+.MyFavs {
+  #winefavs{
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  box-shadow: black;
+  margin: 20px;
+  padding: 20px;
+  button {
+    width: 30%;
+  }
+}
 
 }
 

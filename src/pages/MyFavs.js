@@ -22,17 +22,19 @@ export default function MyFavs(props) {
 	return (
 		<div className="MyFavs">
 			<NavBar routes={routes} />
-			{myFavs.map(item => {
-				return (
-					<>
-						<p key={item._id}>Name:{item.Name}</p>
+			<div id={'winefavs'}>
+				{myFavs.map(item => {
+					return (
+						<>
+							<p key={item._id}>Name:{item.Name}</p>
 
-						<Link to={`/${item._id}`}>
-							<button>See more</button>
-						</Link>
-					</>
-				);
-			})}
+							<Link to={`/${item._id}`}>
+								<button>See more</button>
+							</Link>
+						</>
+					);
+				})}
+			</div>
 		</div>
 	);
 }
