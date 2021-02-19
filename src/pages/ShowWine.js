@@ -37,12 +37,12 @@ export default function ShowWine(props) {
 	};
 
 	return (
-		<div className="MyFavs">
+		<div className="ShowFav">
 			<NavBar routes={routes} />
 			{console.log('line 23', wine)}
 			{wine.map(item => {
 				return (
-					<>
+					<div className="favssection">
 						<p>Name: {item.Name}</p>
 						<p>Winery: {item.Winery}</p>
 						<p>Vintage: {item.vintage}</p>
@@ -50,16 +50,17 @@ export default function ShowWine(props) {
 						<p>Country: {item.Country}</p>
 						<p>Province: {item.Province}</p>
 						<p>My Tasting Notes: {item.MyTastingNotes}</p>
-						<button onClick={handleDelete}>Delete</button>
-						<Link to={`/${item._id}/edit`}>
+
+						<Link to={`/${item._id}/edit`} style={{ textDecoration: 'none' }}>
 							<button>Edit Tasting Notes</button>
 						</Link>
-					</>
+						<button onClick={handleDelete}>Delete</button>
+						<Link to={`/myfavs`} style={{ textDecoration: 'none' }}>
+							<button>Back to Favs</button>
+						</Link>
+					</div>
 				);
 			})}
-			<Link to={`/myfavs`}>
-				<button>Back to Favs</button>
-			</Link>
 		</div>
 	);
 }

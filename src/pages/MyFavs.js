@@ -20,21 +20,28 @@ export default function MyFavs(props) {
 	}, []);
 
 	return (
-		<div className="MyFavs">
+		<>
 			<NavBar routes={routes} />
-			<div id={'winefavs'}>
+			<header className={'backgroundFavs'}>
+				<h1>My Favorites</h1>
+			</header>
+			<div className={'MyFavs'}>
 				{myFavs.map(item => {
 					return (
-						<>
-							<p key={item._id}>Name:{item.Name}</p>
+						<div className={'winefavs'}>
+							<p key={item._id}>
+								{' '}
+								<br />
+								{item.Name}
+							</p>
 
-							<Link to={`/${item._id}`}>
+							<Link to={`/${item._id}`} style={{ textDecoration: 'none' }}>
 								<button>See more</button>
 							</Link>
-						</>
+						</div>
 					);
 				})}
 			</div>
-		</div>
+		</>
 	);
 }

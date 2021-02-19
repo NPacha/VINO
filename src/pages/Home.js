@@ -3,6 +3,7 @@ import WineInfo from '../components/WineInfo';
 import NavBar from '../components/NavBar';
 import routes from '../router/routes.js';
 import classes from '../scss/BackgroundVideo.module.scss';
+import { Link, animateScroll as scroll } from 'react-scroll';
 
 export default function App(props) {
 	const [query, updateQuery] = useState({
@@ -42,11 +43,19 @@ export default function App(props) {
 		});
 	};
 
+	const Scroll = require('react-scroll');
+	const scroller = Scroll.scroller;
+
 	const handleSubmit = event => {
 		event.preventDefault();
 		updateQuery({
 			...query,
 			searchURL: query.baseURL + query.name
+		});
+		scroller.scrollTo('pagesection', {
+			duration: 1500,
+			delay: 100,
+			smooth: true
 		});
 	};
 
@@ -75,6 +84,7 @@ export default function App(props) {
 			console.error(error);
 		}
 	};
+
 	const videoSource =
 		'https://res.cloudinary.com/durki4y94/video/upload/v1613607063/wine_pouring_in_slowmotion1_yljxjs.mp4';
 
@@ -88,7 +98,7 @@ export default function App(props) {
 					</video>
 					<div className="Content">
 						<div className="SubContent">
-							<h2>My Wine App</h2>
+							<h2>VINO</h2>
 							<form onSubmit={handleSubmit}>
 								<input
 									id="name"
@@ -97,13 +107,14 @@ export default function App(props) {
 									value={query.name}
 									onChange={handleChange}
 								/>
+
 								<input type="submit" value="Find Wine" />
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div className={'Page'}>
+			<div className={'Page'} name="pagesection">
 				{wine.map(item => {
 					return (
 						<div className={'winehome'}>
@@ -113,7 +124,7 @@ export default function App(props) {
 								className={'addfavbutton'}
 								onClick={() => handleClick({ item })}
 							>
-								Add To MyFavs
+								Add to My Favs
 							</button>
 						</div>
 					);

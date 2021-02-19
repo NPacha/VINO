@@ -26,6 +26,8 @@ video {
 .SubContent {
   text-align: center;
   padding: 10px; }
+  .SubContent h2 {
+    font-size: 100px; }
 
 .SubContent p {
   color: #eeeeeead;

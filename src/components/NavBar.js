@@ -8,7 +8,12 @@ const NavBar = props => {
 				.filter(item => !item.path.includes(':'))
 				.filter(item => !item.key.includes('LandingPage'))
 				.map(({ key, path }) => (
-					<Link key={key} to={path}>
+					<Link
+						key={key}
+						to={path}
+						style={{ textDecoration: 'none' }}
+						className="link"
+					>
 						{key}
 					</Link>
 				))}
