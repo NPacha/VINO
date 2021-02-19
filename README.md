@@ -1,68 +1,95 @@
-# Big Poppa Code React Starter Kit
-This Starter Kit is being created for New Web Developers that want to get started with react
+# VINO
 
-Most people use a CLI Tool like Vue-Cli or Create React App and no idea what these things are doing
+### App Demo: www.linkegoeshere.com
 
-The goal of this is for it to be a tool that let's you learn JS at a new level because you have access to
-everything under the hood and no opinionated set up
-
-I will base all my tutorials on this Starter Kit.
-
-# Who Am I?
-
-![arthurbernierjr.com](http://progressandfortune.com/smac_images/profile.jpg)
-
-I am Arthur Bernier Jr. I work as freelance fullstack web developer and attraction marketing consultant specializing in supporting e-commerce brands,
-subscription box sites, social activists, religious/non-profit leaders and creative entrepreneurs(i.e. barbers, artists, musicians, stylists, models and photographers).
-I have a passion for helping entrepreneurs reach their perfect audience and helping you communicate to that audience in a way that makes them know, like and trust you. I also am a Full-Time Instructor at General Assembly as well as a Software Engineer at Blavity Inc.
+---
+![Alt Text](https://media.giphy.com/media/l3q2wCnKRThy8ltxS/giphy.gif)
 
 
-# My Favorite Online Instructors
 
-[__Colt Steele__](https://www.youtube.com/channel/UCrqAGUPPMOdo0jfQ6grikZw)
+## Concept:
 
-[__Brad Traversy__](https://www.youtube.com/channel/UC29ju8bIPH5as8OGnQzwJyA)
+VINO is a simple app that allows you to search for a wine, and save it to your favorites to reference for later. Born out of too many wine bottle pictures on my phone of which I saved to keep track of new wines that I try and like, I thought itt would be useful to have one place to store them all. 
 
-[__Jose Santos Garcia__](https://www.youtube.com/channel/UC46wWUso9H5KPQcoL9iE3Ug)
+## Technologies Used:
 
-[__Stephen Grider__](https://www.youtube.com/channel/UCQCaS3atWyNHEy5PkDXdpNg/)
+* HTML
+* SCSS
+* JavaScript 
+* React
+* Mongoose/MongoDB
+* Node
 
-## Steps
+##### Credits:
 
-**Install Gulp Globally**
-```bash
-npm i -g gulp-cli
-```
+    Unsplash.com
+    unDraw.co
+    Slideshow Repo
+    https://medium.com/@RayyanX95/how-to-make-a-background-video-component-in-react-8725e32da272
 
-**Start the dev server**
-```bash
-npm run dev
-```
-### or
-```bash
-yarn dev
-```
+## Approach:
 
-**Start the dev server with proxy**
-```bash
-npm run proxy
-```
+#### Overview
+To start the project, I began by sketching out bare boned wire frames to get a general idea of how the app layout will look. This was followed by jotting down the necessary user stories that I wanted my app to have. 
+I began setting up my environment in React to begin coding, starting with creating the front end, followed by connecting my data to established backend database with MongoDB.
 
-**Build files for production**
-```bash
-yarn build
-```
-### or
+#### Wireframe
 
-```bash
-npm run build
-```
 
-**Deploy for production script**
-```bash
-npm start
-```
-### or
-```bash
-yarn start
-```
+
+
+#### User stories
+
+As an user I expect to see a search field that allows me to input the wine I want to look up. 
+As an user I want to see the wine that I searched for display.
+As a user I want to be able to add this wine to my favorites to reference later. 
+As a user I want to be able to add my own notes about the wine. 
+As a user I want to be able to upload a picture of the bottle of the wine to correspond with the wine I saved to my favorites. 
+As a user I want to have my favorite wines categorized by white, red, and rose. 
+
+#### Development Plan 
+
+description of your development plan 
+
+* Development Plan  ONE
+* Create wire frame Brainstorm actor and actor actions Brainstorm user stories
+* Development Plan  Two
+* Psuedo-code functionality
+* Development Plan  Three 
+* Start creating functionality, incorporate CSS and HTML
+* Development Plan  Four
+* Deploy and test app and Refactor code
+
+#### MVP
+
+* MVP ONE
+* A working full-stack application, built by you, using the MERN stack: Node.js, MongoDB/Mongoose, Express and React.
+* MVP Two
+* At least one model with full CRUD.
+* MVP Three 
+* Pull from a third party API - either client side with AJAX or server-side with an NPM
+* MVP Four
+* Use React Router
+
+#### Stretch goals
+
+* Stretch goals ONE
+* Include professional css styling
+* Stretch goals Two
+* Be able to store user data in database
+* Stretch goals Three 
+* Incorporate login page (not met, tbd in Version 2)
+* Stretch goals Four
+* Sort wines by red, white, and rose (not met, tbd in Version 2)
+
+## Challenges:
+
+The main challenge that I faced was to create a professional apo with useful feature and great user interface in a short amount of time. One of the other main challenges that I was able to overcome and was proud of, was being able to connect my front end with the backend, and figuring out how to store the data on the backend. 
+
+## Future Versions:
+
+In the future versions of this app, I am excited to incorporate a log in and sign up page, a feature that allows the user to upload their own picture of the wine/the bottle, and categorizing the wines on the favorite page by red, white, and rose. 
+
+
+
+### App Demo: www.linkegoeshere.com
