@@ -33,18 +33,20 @@ VINO is a simple app that allows you to search for a wine, and save it to your f
 To start the project, I began by sketching out bare boned wire frames to get a general idea of how the app layout will look. This was followed by jotting down the necessary user stories that I wanted my app to have. 
 I began setting up my environment in React to begin coding, starting with creating the front end, followed by connecting my data to established backend database with MongoDB.
 
-#### Wireframe
-
-
 
 
 #### User stories
 
 As an user I expect to see a search field that allows me to input the wine I want to look up. 
+
 As an user I want to see the wine that I searched for display.
+
 As a user I want to be able to add this wine to my favorites to reference later. 
+
 As a user I want to be able to add my own notes about the wine. 
+
 As a user I want to be able to upload a picture of the bottle of the wine to correspond with the wine I saved to my favorites. 
+
 As a user I want to have my favorite wines categorized by white, red, and rose. 
 
 #### Development Plan 
@@ -84,7 +86,7 @@ description of your development plan
 
 ## Challenges:
 
-The main challenge that I faced was to create a professional apo with useful feature and great user interface in a short amount of time. One of the other main challenges that I was able to overcome and was proud of, was being able to connect my front end with the backend, and figuring out how to store the data on the backend. 
+The main challenge that I faced was to get this application to deploy on Heroku. Additionally, to create a professional app with useful feature and great user interface in a short amount of time. One of the other main challenges that I was able to overcome and was proud of, was being able to connect my front end with the backend, and figuring out how to store the data on the backend. 
 
 ## Future Versions:
 
