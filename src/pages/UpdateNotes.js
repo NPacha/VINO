@@ -41,18 +41,21 @@ export default function UpdateNotes(props) {
 	};
 
 	return (
-		<div>
-			<form
-				style={{ display: 'flex', flexDirection: 'column' }}
-				onSubmit={handleSubmit}
-			>
-				<label>
-					{' '}
-					My Tasting Notes:{' '}
-					<input type="text" ref={notesInput} defaultValue={wine.body} />
-				</label>
-				<input type="submit" value="Update Notes" />
-			</form>
+		<div className={'updateNotes'}>
+			<div className={'favssection'}>
+				<form
+					style={{ display: 'flex', flexDirection: 'column' }}
+					onSubmit={handleSubmit}
+				>
+					<label>
+						{' '}
+						My Tasting Notes:{' '}
+						<input type="text" ref={notesInput} defaultValue={wine.body} />
+					</label>{' '}
+					<br />
+					<input type="submit" value="Update Notes" />
+				</form>
+			</div>
 		</div>
 	);
 }

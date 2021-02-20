@@ -59,7 +59,9 @@ export default function App(props) {
 		});
 	};
 
-	const handleClick = async newWine => {
+	const handleClick = async (e, newWine) => {
+		console.log(e.target);
+		e.target.innerHTML = 'Added';
 		const body = JSON.stringify({
 			ref: newWine['item']._id,
 			Name: newWine['item'].Name,
@@ -122,7 +124,7 @@ export default function App(props) {
 
 							<button
 								className={'addfavbutton'}
-								onClick={() => handleClick({ item })}
+								onClick={e => handleClick(e, { item })}
 							>
 								Add to My Favs
 							</button>
