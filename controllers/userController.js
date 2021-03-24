@@ -7,6 +7,20 @@ const SECRET = process.env.SECRET;
 const express = require('express');
 const userRouter = express.Router();
 
+//Read
+userRouter.get('/api/users', async (req, res) => {
+    try {
+        const foundUser = await User.find({});
+        res
+            .status(200)
+            .json(foundUser)
+    } catch(error){
+        res
+            .status(400)
+            .json(error)
+    }
+})
+
 //register
 userRouter.post('/register', async (req, res) => {
     let { email, password } = req.body;

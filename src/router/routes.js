@@ -4,8 +4,14 @@ import MyFavs from '../pages/MyFavs';
 import ShowWine from '../pages/ShowWine';
 import LandingPage from '../pages/LandingPage';
 import UpdateNotes from '../pages/UpdateNotes';
+import SignUpForm from '../components/SignUpForm';
 
 const routes = [
+	{
+		Component: SignUpForm,
+		key: 'SignUpForm',
+		path: '/register'
+	},
 	{
 		Component: Home,
 		key: 'Home',
