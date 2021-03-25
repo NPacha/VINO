@@ -3,23 +3,27 @@ import axios from 'axios';
 
 export default function SignUpForm(props) {
 	const [state, setState] = useState({
+		firstName: '',
+		lastName: '',
 		email: '',
 		password: '',
 		isLoggedIn: false
 	});
 
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	// const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	useEffect(() => {
 		if (localStorage.token) {
-			setIsLoggedIn(true);
+			props.setIsLoggedIn(true);
 		} else {
-			setIsLoggedIn(false);
+			props.setIsLoggedIn(false);
 		}
-	}, [isLoggedIn]);
+	}, [props.isLoggedIn]);
 
 	const handleLogOut = () => {
 		setState({
+			firstName: '',
+			lastName: '',
 			email: '',
 			password: '',
 			isLoggedIn: false
@@ -29,20 +33,26 @@ export default function SignUpForm(props) {
 
 	const handleInput = event => {
 		setState({ ...state, [event.target.name]: event.target.value });
+		console.log('hello');
 	};
 
 	const handleSignUp = async event => {
 		event.preventDefault();
 		try {
 			const response = await axios.post('http://localhost:3000/register', {
+				firstName: state.firstName,
+				lastName: state.lastName,
 				email: state.email,
 				password: state.password
 			});
 			console.log(response);
 			localStorage.setItem('token', response.data.token);
-			setIsLoggedIn(true);
+			props.setIsLoggedIn(true);
+			console.log(props.isLoggedIn);
 		} catch (err) {
 			console.log(err);
+		} finally {
+			window.location.assign('/home');
 		}
 	};
 
@@ -54,7 +64,7 @@ export default function SignUpForm(props) {
 				password: state.password
 			});
 			localStorage.setItem('token', response.data.token);
-			setIsLoggedIn(true);
+			props.setIsLoggedIn(true);
 		} catch (error) {
 			console.log(error);
 		}
@@ -63,15 +73,38 @@ export default function SignUpForm(props) {
 		<div>
 			<h2>Sign Up</h2>
 			<form>
-				<div>
-					<label htmlFor="email">Email</label>
-					<input type="text" name="email" onChange={handleInput} />
-				</div>
+				<label htmlFor="firstName">First Name</label>
+				<input
+					type="text"
+					name="firstName"
+					value={state.firstName}
+					onChange={handleInput}
+				/>
 
-				<div>
-					<label htmlFor="password">Password</label>
-					<input type="text" name="password" onChange={handleInput} />
-				</div>
+				<label htmlFor="lastName">Last Name</label>
+				<input
+					type="text"
+					name="lastName"
+					value={state.lastName}
+					onChange={handleInput}
+				/>
+
+				<label htmlFor="email">Email</label>
+				<input
+					type="text"
+					name="email"
+					value={state.email}
+					onChange={handleInput}
+				/>
+
+				<label htmlFor="password">Password</label>
+				<input
+					type="text"
+					name="password"
+					value={state.password}
+					onChange={handleInput}
+				/>
+
 				<input value="Submit" type="submit" onClick={handleSignUp} />
 			</form>
 		</div>

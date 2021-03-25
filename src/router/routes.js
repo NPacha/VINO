@@ -5,12 +5,18 @@ import ShowWine from '../pages/ShowWine';
 import LandingPage from '../pages/LandingPage';
 import UpdateNotes from '../pages/UpdateNotes';
 import SignUpForm from '../components/SignUpForm';
+import LogOut from '../components/LogOut';
 
 const routes = [
 	{
 		Component: SignUpForm,
 		key: 'SignUpForm',
 		path: '/register'
+	},
+	{
+		Component: LogOut,
+		key: 'LogOut',
+		path: '/logout'
 	},
 	{
 		Component: Home,

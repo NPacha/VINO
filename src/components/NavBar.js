@@ -7,6 +7,7 @@ const NavBar = props => {
 			{props.routes
 				.filter(item => !item.path.includes(':'))
 				.filter(item => !item.key.includes('LandingPage'))
+				.filter(item => !item.key.includes('SignUpForm'))
 				.map(({ key, path }) => (
 					<Link
 						key={key}

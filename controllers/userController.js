@@ -23,11 +23,11 @@ userRouter.get('/api/users', async (req, res) => {
 
 //register
 userRouter.post('/register', async (req, res) => {
-    let { email, password } = req.body;
+    let { firstName, lastName, email, password } = req.body;
     password = hash(password);
     password = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
     try{
-        const newUser = await User.create({email, password});
+        const newUser = await User.create({firstName, lastName, email, password});
         const token = jwt.sign({email: newUser.email, id: newUser._id}, SECRET);
         res.json({
             token, 
