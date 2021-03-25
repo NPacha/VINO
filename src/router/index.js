@@ -4,7 +4,13 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import routes from './routes';
 
 const AppRouter = () => {
-	const [isLoggedIn, setIsLoggedIn] = useState(false);
+	let [isLoggedIn, setIsLoggedIn] = useState(false);
+
+	useEffect(() => {
+		if (localStorage.token) {
+			setIsLoggedIn(true);
+		}
+	}, [isLoggedIn]);
 
 	return (
 		<Router>

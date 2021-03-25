@@ -6,11 +6,8 @@ export default function SignUpForm(props) {
 		firstName: '',
 		lastName: '',
 		email: '',
-		password: '',
-		isLoggedIn: false
+		password: ''
 	});
-
-	// const [isLoggedIn, setIsLoggedIn] = useState(false);
 
 	useEffect(() => {
 		if (localStorage.token) {
@@ -19,17 +16,6 @@ export default function SignUpForm(props) {
 			props.setIsLoggedIn(false);
 		}
 	}, [props.isLoggedIn]);
-
-	const handleLogOut = () => {
-		setState({
-			firstName: '',
-			lastName: '',
-			email: '',
-			password: '',
-			isLoggedIn: false
-		});
-		localStorage.clear();
-	};
 
 	const handleInput = event => {
 		setState({ ...state, [event.target.name]: event.target.value });
@@ -45,14 +31,15 @@ export default function SignUpForm(props) {
 				email: state.email,
 				password: state.password
 			});
-			console.log(response);
+
 			localStorage.setItem('token', response.data.token);
-			props.setIsLoggedIn(true);
 			console.log(props.isLoggedIn);
 		} catch (err) {
 			console.log(err);
 		} finally {
+			props.setIsLoggedIn(true);
 			window.location.assign('/home');
+			console.log(response);
 		}
 	};
 
