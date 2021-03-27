@@ -1,6 +1,8 @@
 const express = require('express');
 const wineController = express.Router();
+const User = require('../models/user');
 const Wine = require('../models/wine');
+const auth = require('./authController')
 
 //INDUCES
 //Index New Delete Update Create Edit Show
@@ -10,7 +12,16 @@ const Wine = require('../models/wine');
 //Create
 wineController.post('/', async (req, res)=> {
     try{
-        const newWine = await Wine.create(req.body);
+        const { Name, Winery, userId } = req.body
+        const newWine = await Wine.create(
+          {
+              Name,
+              Winery
+          }
+        );
+        const foundUser = await User.findById(userId)
+        const userWines = foundUser.favoriteWines;
+        const updatedUser = await User.findByIdAndUpdate(userId, {favoriteWines: [...userWines, newWine._id]})
         res
             .status(200)
             .json(newWine)

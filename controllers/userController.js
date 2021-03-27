@@ -21,18 +21,20 @@ userRouter.get('/api/users', async (req, res) => {
     }
 })
 
-//register
+//register (Create)
 userRouter.post('/register', async (req, res) => {
-    let { firstName, lastName, email, password } = req.body;
+    let { firstName, lastName, email, password, favoriteWines } = req.body;
     password = hash(password);
     password = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
     try{
-        const newUser = await User.create({firstName, lastName, email, password});
+        const newUser = await User.create({firstName, lastName, email, password, favoriteWines});
         const token = jwt.sign({email: newUser.email, id: newUser._id}, SECRET);
         res.json({
             token, 
             authorized: true, 
-            username: newUser.email
+            username: newUser.email,
+            firstName: newUser.firstName,
+
         })
     } catch(error){
         res
@@ -42,7 +44,7 @@ userRouter.post('/register', async (req, res) => {
 })
 
 
-//login
+//login 
 userRouter.post('/login', async(req, res) => {
     let { email, password } = req.body;
     password = hash(password);
@@ -60,6 +62,8 @@ userRouter.post('/login', async(req, res) => {
             res.status(200).json({
                 token,
                 authorized: true, 
+                firstName: foundUser.firstName,
+                lastName: foundUser.lastName,
                 username: foundUser.email
             })
         } else {
@@ -69,6 +73,35 @@ userRouter.post('/login', async(req, res) => {
         }
     } catch(error){
         console.error(error);
+        res
+            .status(400)
+            .json(error)
+    }
+})
+
+//Show
+userRouter.get('/:id', async (req, res) => {
+    try {
+        const foundUser = await User.findById(req.params.id)
+        await foundUser.execPopulate('favoriteWines')
+        res
+            .status(200)
+            .json(foundUser)
+    } catch (error) {
+        res
+            .status(400)
+            .json(error)
+    }
+})
+
+//Destroy
+userRouter.delete('/:id', async (req, res) => {
+    try {
+        const foundUser = await User.findByIdAndDelete(req.params.id)
+        res
+            .status(200)
+            .json(foundUser)
+    } catch(error) {
         res
             .status(400)
             .json(error)

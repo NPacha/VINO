@@ -5,6 +5,7 @@ const NavBar = props => {
 	return (
 		<nav className="NavBar">
 			{props.routes
+
 				.filter(item => !item.path.includes(':'))
 				.filter(item => !item.key.includes('LandingPage'))
 				.filter(item => !item.key.includes('SignUpForm'))

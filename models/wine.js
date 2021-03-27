@@ -2,6 +2,7 @@ const {Schema, model} = require('mongoose');
 
 const wineSchema = new Schema ({
     ref: String,
+    userId: String,
     Name: String, 
     Winery: String,
     vintage: String,

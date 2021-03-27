@@ -34,7 +34,7 @@ app.get('/test', (req, res)=>{
 	})
 })
 app.use('/api/wines', wineController); //this is the end point for the wine controller, this is the connection to the database
-app.use('/', userController);
+app.use('/users', userController);
 /* Controller Ends here */
 //LISTENER
 
