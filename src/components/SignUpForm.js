@@ -25,12 +25,15 @@ export default function SignUpForm(props) {
 	const handleSignUp = async event => {
 		event.preventDefault();
 		try {
-			const response = await axios.post('http://localhost:3000/register', {
-				firstName: state.firstName,
-				lastName: state.lastName,
-				email: state.email,
-				password: state.password
-			});
+			const response = await axios.post(
+				'http://localhost:3000/users/register',
+				{
+					firstName: state.firstName,
+					lastName: state.lastName,
+					email: state.email,
+					password: state.password
+				}
+			);
 
 			localStorage.setItem('token', response.data.token);
 			console.log(props.isLoggedIn);
