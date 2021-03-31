@@ -8,7 +8,7 @@ const express = require('express');
 const userRouter = express.Router();
 
 //Read
-userRouter.get('/api/users', async (req, res) => {
+userRouter.get('/', async (req, res) => {
     try {
         const foundUser = await User.find({});
         res

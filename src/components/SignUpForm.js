@@ -18,7 +18,10 @@ export default function SignUpForm(props) {
 	}, [props.isLoggedIn]);
 
 	const handleInput = event => {
-		setState({ ...state, [event.target.name]: event.target.value });
+		setState({
+			...state,
+			[event.target.name]: event.target.value
+		});
 		console.log('hello');
 	};
 
@@ -34,7 +37,7 @@ export default function SignUpForm(props) {
 					password: state.password
 				}
 			);
-
+			console.log(response);
 			localStorage.setItem('token', response.data.token);
 			console.log(props.isLoggedIn);
 		} catch (err) {
@@ -46,19 +49,20 @@ export default function SignUpForm(props) {
 		}
 	};
 
-	const handleLogIn = async event => {
-		event.preventDefault();
-		try {
-			const response = await axios.post('http://localhost:3002/login', {
-				email: state.email,
-				password: state.password
-			});
-			localStorage.setItem('token', response.data.token);
-			props.setIsLoggedIn(true);
-		} catch (error) {
-			console.log(error);
-		}
-	};
+	// const handleLogIn = async event => {
+	// 	event.preventDefault();
+	// 	try {
+	// 		const response = await axios.post('http://localhost:3002/login', {
+	// 			email: state.email,
+	// 			password: state.password
+	// 		});
+	// 		localStorage.setItem('token', response.data.token);
+
+	// 		props.setIsLoggedIn(true);
+	// 	} catch (error) {
+	// 		console.log(error);
+	// 	}
+	// };
 	return (
 		<div>
 			<h2>Sign Up</h2>

@@ -27,12 +27,6 @@ if (process.env.NODE_ENV !== 'development'){
 }
 
 /* Controller Goes Here Remove the test*/
-app.get('/test', (req, res)=>{
-	res.status(200).json({
-		website: 'My Website',
-		info: 'Not that much'
-	})
-})
 app.use('/api/wines', wineController); //this is the end point for the wine controller, this is the connection to the database
 app.use('/users', userController);
 /* Controller Ends here */
