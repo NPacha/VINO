@@ -32,6 +32,7 @@ userRouter.post('/register', async (req, res) => {
         res.json({
             token, 
             authorized: true, 
+            id: newUser._id,
             username: newUser.email,
             firstName: newUser.firstName,
 

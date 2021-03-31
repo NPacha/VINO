@@ -63,6 +63,8 @@ export default function App(props) {
 		console.log(e.target);
 		e.target.innerHTML = 'Added';
 		const body = JSON.stringify({
+			userId: localStorage.getItem('userId'),
+			wine: {
 			ref: newWine['item']._id,
 			Name: newWine['item'].Name,
 			Winery: newWine['item'].Winery,
@@ -70,7 +72,7 @@ export default function App(props) {
 			Varietal: newWine['item'].Varietal,
 			Country: newWine['item'].Country,
 			Province: newWine['item'].Province,
-			MyTastingNotes: ''
+			MyTastingNotes: ''}
 		});
 
 		try {

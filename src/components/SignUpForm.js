@@ -37,15 +37,16 @@ export default function SignUpForm(props) {
 					password: state.password
 				}
 			);
-			console.log(response);
 			localStorage.setItem('token', response.data.token);
+			localStorage.setItem('userId', response.data.id);
 			console.log(props.isLoggedIn);
 		} catch (err) {
 			console.log(err);
 		} finally {
+			console.log('test');
 			props.setIsLoggedIn(true);
+
 			window.location.assign('/home');
-			console.log(response);
 		}
 	};
 

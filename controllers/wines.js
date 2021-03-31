@@ -12,12 +12,9 @@ const auth = require('./authController')
 //Create
 wineController.post('/', async (req, res)=> {
     try{
-        const { Name, Winery, userId } = req.body
+        const { userId } = req.body
         const newWine = await Wine.create(
-          {
-              Name,
-              Winery
-          }
+          req.body.wine
         );
         const foundUser = await User.findById(userId)
         const userWines = foundUser.favoriteWines;
