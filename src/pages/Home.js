@@ -6,11 +6,17 @@ import classes from '../scss/BackgroundVideo.module.scss';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 export default function App(props) {
+	const Scroll = require('react-scroll');
+	const scroller = Scroll.scroller;
+	const videoSource =
+		'https://res.cloudinary.com/durki4y94/video/upload/v1613607063/wine_pouring_in_slowmotion1_yljxjs.mp4';
+
 	const [query, updateQuery] = useState({
 		baseURL: 'https://quiniwine.com/api/pub/wineKeywordSearch/',
 		name: '',
 		searchURL: ''
 	});
+
 	const [wine, setWine] = useState([]);
 
 	useEffect(() => {
@@ -42,9 +48,6 @@ export default function App(props) {
 			}
 		});
 	};
-
-	const Scroll = require('react-scroll');
-	const scroller = Scroll.scroller;
 
 	const handleSubmit = event => {
 		event.preventDefault();
@@ -90,9 +93,6 @@ export default function App(props) {
 		}
 	};
 
-	const videoSource =
-		'https://res.cloudinary.com/durki4y94/video/upload/v1613607063/wine_pouring_in_slowmotion1_yljxjs.mp4';
-
 	return (
 		<>
 			<NavBar routes={routes} />
@@ -102,20 +102,24 @@ export default function App(props) {
 						<source src={videoSource} type="video/mp4" />
 					</video>
 					<div className="Content">
-						<div className="SubContent">
-							<h2>VINO</h2>
-							<form onSubmit={handleSubmit}>
-								<input
-									id="name"
-									type="text"
-									placeholder="Type your wine here..."
-									value={query.name}
-									onChange={handleChange}
-								/>
+						{localStorage.name ? (
+							<div className="SubContent">
+								<h2>VINO</h2>
+								<form onSubmit={handleSubmit}>
+									<input
+										id="name"
+										type="text"
+										placeholder="Type your wine here..."
+										value={query.name}
+										onChange={handleChange}
+									/>
 
-								<input type="submit" value="Find Wine" />
-							</form>
-						</div>
+									<input type="submit" value="Find Wine" />
+								</form>
+							</div>
+						) : (
+							<h2>VINO</h2>
+						)}
 					</div>
 				</div>
 			</div>
