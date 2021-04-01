@@ -53,7 +53,7 @@ export default function LogInForm(props) {
 
 				<label htmlFor="password">Password</label>
 				<input
-					type="text"
+					type="password"
 					name="password"
 					value={state.password}
 					onChange={handleInput}

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import WineInfo from '../components/WineInfo';
+import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import routes from '../router/routes.js';
 import classes from '../scss/BackgroundVideo.module.scss';
@@ -118,7 +119,9 @@ export default function App(props) {
 								</form>
 							</div>
 						) : (
-							<h2>VINO</h2>
+							<div>
+								<h2>VINO</h2>
+							</div>
 						)}
 					</div>
 				</div>
@@ -139,6 +142,7 @@ export default function App(props) {
 					);
 				})}
 			</div>
+			<Footer />
 		</>
 	);
 }

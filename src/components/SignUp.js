@@ -49,20 +49,6 @@ export default function SignUp(props) {
 		}
 	};
 
-	// const handleLogIn = async event => {
-	// 	event.preventDefault();
-	// 	try {
-	// 		const response = await axios.post('http://localhost:3002/login', {
-	// 			email: state.email,
-	// 			password: state.password
-	// 		});
-	// 		localStorage.setItem('token', response.data.token);
-
-	// 		props.setIsLoggedIn(true);
-	// 	} catch (error) {
-	// 		console.log(error);
-	// 	}
-	// };
 	return (
 		<div>
 			<h2>Sign Up</h2>
@@ -93,7 +79,7 @@ export default function SignUp(props) {
 
 				<label htmlFor="password">Password</label>
 				<input
-					type="text"
+					type="password"
 					name="password"
 					value={state.password}
 					onChange={handleInput}
