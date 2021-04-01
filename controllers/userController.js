@@ -63,12 +63,12 @@ userRouter.post('/login', async(req, res) => {
             res.status(200).json({
                 token,
                 authorized: true, 
+                id: foundUser._id,
                 firstName: foundUser.firstName,
-                lastName: foundUser.lastName,
                 username: foundUser.email
             })
         } else {
-            res.send(400).json({
+            res.status(400).json({
                 message: 'User entered incorrect Password or User Does Not Exist'
             })
         }

@@ -16,6 +16,9 @@ export default function LandingPage(props) {
 				<Link to={'/register'}>
 					<button>Register</button>
 				</Link>
+				<Link to={'/login'}>
+					<button>Log In</button>
+				</Link>
 			</div>
 		</>
 	);
