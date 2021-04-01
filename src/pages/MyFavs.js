@@ -7,15 +7,17 @@ import routes from '../router/routes.js';
 export default function MyFavs(props) {
 	const [myFavs, setMyFavs] = useState([]);
 
+	const userId = localStorage.getItem('userId');
+
 	useEffect(() => {
 		async function fetchData() {
-			const response = await axios.get('/api/wines', {
+			const response = await axios.get(`/users/${userId}`, {
 				headers: {
 					Authorization: 'Bearer ' + localStorage.getItem('token')
 				}
 			});
-			const data = await response.json();
-			setMyFavs(data);
+			console.log(response);
+			setMyFavs(response.data.favoriteWines);
 		}
 		fetchData();
 	}, []);

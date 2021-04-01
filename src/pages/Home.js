@@ -65,14 +65,15 @@ export default function App(props) {
 		const body = JSON.stringify({
 			userId: localStorage.getItem('userId'),
 			wine: {
-			ref: newWine['item']._id,
-			Name: newWine['item'].Name,
-			Winery: newWine['item'].Winery,
-			vintage: newWine['item'].vintage,
-			Varietal: newWine['item'].Varietal,
-			Country: newWine['item'].Country,
-			Province: newWine['item'].Province,
-			MyTastingNotes: ''}
+				ref: newWine['item']._id,
+				Name: newWine['item'].Name,
+				Winery: newWine['item'].Winery,
+				vintage: newWine['item'].vintage,
+				Varietal: newWine['item'].Varietal,
+				Country: newWine['item'].Country,
+				Province: newWine['item'].Province,
+				MyTastingNotes: ''
+			}
 		});
 
 		try {
