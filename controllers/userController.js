@@ -50,7 +50,7 @@ userRouter.post('/login', async(req, res) => {
     let { email, password } = req.body;
     password = hash(password);
     try{
-        const userQuery = User.findOne({email}).select('password email')
+        const userQuery = User.findOne({email}).select('password email firstName')
         const foundUser = await userQuery.exec();
         console.log(foundUser);
         if(bcrypt.compareSync(password, foundUser.password)){

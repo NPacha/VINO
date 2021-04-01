@@ -21,18 +21,6 @@ export default function MyFavs(props) {
 		}
 		fetchData();
 	}, []);
-	// 	// Immediately Invoked Function Expression
-	// 	(async () => {
-	// 		try {
-	// 			const response = await fetch('/api/wines');
-	// 			const data = await response.json();
-	// 			setMyFavs(data);
-	// 			console.log('line12', data);
-	// 		} catch (error) {
-	// 			console.error(error);
-	// 		}
-	// 	})();
-	// },
 
 	return (
 		<>
@@ -43,8 +31,8 @@ export default function MyFavs(props) {
 			<div className={'MyFavs'}>
 				{myFavs.map(item => {
 					return (
-						<div className={'winefavs'}>
-							<p key={item._id}>
+						<div className={'winefavs'} key={item._id}>
+							<p>
 								{' '}
 								<br />
 								{item.Name}

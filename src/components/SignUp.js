@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-export default function SignUpForm(props) {
+export default function SignUp(props) {
 	const [state, setState] = useState({
 		firstName: '',
 		lastName: '',
@@ -39,11 +39,10 @@ export default function SignUpForm(props) {
 			);
 			localStorage.setItem('token', response.data.token);
 			localStorage.setItem('userId', response.data.id);
-			console.log(props.isLoggedIn);
+			localStorage.setItem('name', response.data.firstName);
 		} catch (err) {
 			console.log(err);
 		} finally {
-			console.log('test');
 			props.setIsLoggedIn(true);
 
 			window.location.assign('/home');

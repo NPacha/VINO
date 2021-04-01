@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Link } from 'react-router-dom';
-import SignUpForm from '../components/SignUpForm';
+import SignUp from '../components/SignUp';
 import BackgroundVideo from '../components/BackgroundVideo';
 import axios from 'axios';
 

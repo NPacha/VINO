@@ -3,8 +3,6 @@ import axios from 'axios';
 
 export default function LogInForm(props) {
 	const [state, setState] = useState({
-		firstName: '',
-		lastName: '',
 		email: '',
 		password: ''
 	});
@@ -22,68 +20,29 @@ export default function LogInForm(props) {
 			...state,
 			[event.target.name]: event.target.value
 		});
-		console.log('hello');
 	};
-
-	// const handleSignUp = async event => {
-	// 	event.preventDefault();
-	// 	try {
-	// 		const response = await axios.post(
-	// 			'http://localhost:3000/users/register',
-	// 			{
-	// 				firstName: state.firstName,
-	// 				lastName: state.lastName,
-	// 				email: state.email,
-	// 				password: state.password
-	// 			}
-	// 		);
-	// 		localStorage.setItem('token', response.data.token);
-	// 		localStorage.setItem('userId', response.data.id);
-	// 		console.log(props.isLoggedIn);
-	// 	} catch (err) {
-	// 		console.log(err);
-	// 	} finally {
-	// 		console.log('test');
-	// 		props.setIsLoggedIn(true);
-
-	// 		window.location.assign('/home');
-	// 	}
-	// };
 
 	const handleLogIn = async event => {
 		event.preventDefault();
 		try {
-			const response = await axios.post('http://localhost:3000/login', {
+			const response = await axios.post('http://localhost:3000/users/login', {
 				email: state.email,
 				password: state.password
 			});
 			localStorage.setItem('token', response.data.token);
 			localStorage.setItem('userId', response.data.id);
+			localStorage.setItem('name', response.data.firstName);
 			props.setIsLoggedIn(true);
 		} catch (error) {
 			console.log(error);
+		} finally {
+			window.location.assign('/home');
 		}
 	};
 	return (
 		<div>
 			<h2>Log In</h2>
 			<form>
-				<label htmlFor="firstName">First Name</label>
-				<input
-					type="text"
-					name="firstName"
-					value={state.firstName}
-					onChange={handleInput}
-				/>
-
-				<label htmlFor="lastName">Last Name</label>
-				<input
-					type="text"
-					name="lastName"
-					value={state.lastName}
-					onChange={handleInput}
-				/>
-
 				<label htmlFor="email">Email</label>
 				<input
 					type="text"
@@ -101,6 +60,7 @@ export default function LogInForm(props) {
 				/>
 
 				<input value="Submit" type="submit" onClick={handleLogIn} />
+				<br />
 			</form>
 		</div>
 	);

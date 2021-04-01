@@ -4,6 +4,7 @@ export default function LogOut(props) {
 	const handleLogOut = () => {
 		localStorage.clear();
 		props.setIsLoggedIn(false);
+		window.location.assign('/home');
 	};
 	return (
 		<div>
