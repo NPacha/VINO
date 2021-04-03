@@ -5,7 +5,8 @@ export default function Footer(props) {
 		<>
 			<footer>
 				<ul>
-					<li>Made with :heart:</li>
+					<li>Made with &#9829;</li>
+					<li>By Nicole Pacha</li>
 				</ul>
 			</footer>
 		</>

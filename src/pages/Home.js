@@ -141,6 +141,9 @@ export default function App(props) {
 					);
 				})}
 			</div>
+			<a id="back2Top" href="#">
+				<img src="http://www.clker.com/cliparts/B/5/C/M/6/i/right-grey-arrow.svg" />
+			</a>
 			<Footer />
 		</>
 	);

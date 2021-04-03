@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import NavBar from '../components/NavBar';
 import routes from '../router/routes.js';
+import Footer from '../components/Footer';
 
 export default function About(props) {
 	return (
@@ -19,6 +20,7 @@ export default function About(props) {
 				Love, <br />
 				Nicole Pacha, student of software engineering.{' '}
 			</div>
+			<Footer />
 		</>
 	);
 }

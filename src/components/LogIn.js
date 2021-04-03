@@ -39,7 +39,7 @@ export default function LogInForm(props) {
 				localStorage.setItem('error', response.data.message);
 			}
 		} catch (error) {
-			console.log(error);
+			console.log('myerror' + error);
 		} finally {
 		}
 	};

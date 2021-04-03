@@ -3,6 +3,7 @@ import ImageUploading from 'react-images-uploading';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import routes from '../router/routes.js';
+import Footer from '../components/Footer';
 import AddPhoto from '../components/AddPhoto';
 
 export default function ShowWine(props) {
@@ -71,6 +72,7 @@ export default function ShowWine(props) {
 					);
 				})}
 			</div>
+			<Footer />
 		</div>
 	);
 }
