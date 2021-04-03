@@ -273,32 +273,46 @@ button:hover {
 
   #app {
    height: 100vh;
+   .SubContent {
    text-align: center;
    background-image: url('https://i.imgur.com/muGhj1T.jpg');
     background-size: cover;
-    
-
+    width: 100%;
+    height: 100%;;
+ }
+  
    .Container {
      height: 100vh;
      
    }
   }
+
+
   video {
     display: none;
   }
 
   .HomePage {
-    display: fixed;
-    position: relative;
-    top: -100px;
+    
     h2{
       font-size: 100px;
+      display: fixed;
+    position: relative;
+    top: 10px;
     }
     form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       input {
         margin: 10px;
         padding: 3px;
+        height: 50px;
+        width: 180px;
       }
+      display: fixed;
+    position: relative;
+    top: 20px;
     }
     button {
       display: inline-flex;
@@ -353,7 +367,87 @@ button:hover {
     
   
   }
+
+  .Page{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .winehome {
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    box-shadow: black;
+    margin: 20px;
+    padding: 20px;
+    button {
+        display: inline-flex;
+        height: 40px;
+        width: 150px;
+        border: 1px solid #BFC0C0;
+        margin: 20px 20px 20px 20px;
+        color: black;
+        background-color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: .8em;
+        letter-spacing: 1.5px;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      button:hover {
+        background-color: black;
+        color: white;
+      }
+    
+  }
+  .MyFavs {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: white;
+    .winefavs{
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+    box-shadow: black;
+    margin: 15px;
+    padding: 20px;
+    p{
+      font-size: 20px;
+    }
+    
+  }
+  
+  }
+  .ShowFav {
+    background-image: url('https://i.imgur.com/Lt6Em48.jpg');
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    .favssection{
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+    box-shadow: black;
+    margin: 10px;
+    padding: 20px;
+    
+  }
   
 }
-
+}
 

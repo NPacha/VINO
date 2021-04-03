@@ -43,32 +43,34 @@ export default function ShowWine(props) {
 		<div className="ShowFav">
 			<NavBar routes={routes} />
 			{console.log('line 23', wine)}
-			{wine.map(item => {
-				return (
-					<div className="favssection">
-						<p>Name: {item.Name}</p>
-						<p>Winery: {item.Winery}</p>
-						<p>Vintage: {item.vintage}</p>
-						<p>Varietal: {item.Varietal}</p>
-						<p>Country: {item.Country}</p>
-						<p>Province: {item.Province}</p>
-						<p>My Tasting Notes: {item.MyTastingNotes}</p>
-						<p>Photo: </p>
+			<div className="favssection">
+				{wine.map(item => {
+					return (
+						<>
+							<p>Name: {item.Name}</p>
+							<p>Winery: {item.Winery}</p>
+							<p>Vintage: {item.vintage}</p>
+							<p>Varietal: {item.Varietal}</p>
+							<p>Country: {item.Country}</p>
+							<p>Province: {item.Province}</p>
+							<p>My Tasting Notes: {item.MyTastingNotes}</p>
+							<p>Photo: </p>
 
-						<Link to={`/${item._id}/edit`} style={{ textDecoration: 'none' }}>
-							<button>Edit Tasting Notes</button>
-						</Link>
-						{/* <Link to={`/addphoto`} style={{ textDecoration: 'none' }}>
+							<Link to={`/${item._id}/edit`} style={{ textDecoration: 'none' }}>
+								<button>Edit Tasting Notes</button>
+							</Link>
+							{/* <Link to={`/addphoto`} style={{ textDecoration: 'none' }}>
 							<button>Add Photo</button>
 						</Link> */}
-						<AddPhoto images={images} setImages={setImages} />
-						<button onClick={handleDelete}>Delete</button>
-						<Link to={`/myfavs`} style={{ textDecoration: 'none' }}>
-							<button>Back to Favs</button>
-						</Link>
-					</div>
-				);
-			})}
+							{/* <AddPhoto images={images} setImages={setImages} /> */}
+							<button onClick={handleDelete}>Delete</button>
+							<Link to={`/myfavs`} style={{ textDecoration: 'none' }}>
+								<button>Back to Favs</button>
+							</Link>
+						</>
+					);
+				})}
+			</div>
 		</div>
 	);
 }
