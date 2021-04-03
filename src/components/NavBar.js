@@ -11,6 +11,7 @@ const NavBar = props => {
 					.filter(item => !item.key.includes('LandingPage'))
 					.filter(item => !item.key.includes('SignUp'))
 					.filter(item => !item.key.includes('LogIn'))
+					.filter(item => !item.key.includes('AddPhoto'))
 					.map(({ key, path }) => (
 						<Link
 							key={key}
@@ -33,6 +34,7 @@ const NavBar = props => {
 					.filter(item => !item.key.includes('LandingPage'))
 					.filter(item => !item.key.includes('LogOut'))
 					.filter(item => !item.key.includes('MyFavs'))
+					.filter(item => !item.key.includes('AddPhoto'))
 					.map(({ key, path }) => (
 						<Link
 							key={key}

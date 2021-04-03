@@ -3,7 +3,6 @@ import WineInfo from '../components/WineInfo';
 import Footer from '../components/Footer';
 import NavBar from '../components/NavBar';
 import routes from '../router/routes.js';
-import classes from '../scss/BackgroundVideo.module.scss';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
 export default function App(props) {

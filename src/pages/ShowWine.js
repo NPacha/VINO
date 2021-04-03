@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import ImageUploading from 'react-images-uploading';
 import { Link } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import routes from '../router/routes.js';
+import AddPhoto from '../components/AddPhoto';
 
 export default function ShowWine(props) {
 	const [wine, setWine] = useState([]);
+	const [images, setImages] = useState([]);
 
 	//we are using useEffect so we can go grab some data that we need from the backend
 	useEffect(() => {
@@ -50,10 +53,15 @@ export default function ShowWine(props) {
 						<p>Country: {item.Country}</p>
 						<p>Province: {item.Province}</p>
 						<p>My Tasting Notes: {item.MyTastingNotes}</p>
+						<p>Photo: </p>
 
 						<Link to={`/${item._id}/edit`} style={{ textDecoration: 'none' }}>
 							<button>Edit Tasting Notes</button>
 						</Link>
+						{/* <Link to={`/addphoto`} style={{ textDecoration: 'none' }}>
+							<button>Add Photo</button>
+						</Link> */}
+						<AddPhoto images={images} setImages={setImages} />
 						<button onClick={handleDelete}>Delete</button>
 						<Link to={`/myfavs`} style={{ textDecoration: 'none' }}>
 							<button>Back to Favs</button>

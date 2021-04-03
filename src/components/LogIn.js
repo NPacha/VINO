@@ -29,14 +29,18 @@ export default function LogInForm(props) {
 				email: state.email,
 				password: state.password
 			});
-			localStorage.setItem('token', response.data.token);
-			localStorage.setItem('userId', response.data.id);
-			localStorage.setItem('name', response.data.firstName);
-			props.setIsLoggedIn(true);
+			if (response.data.token) {
+				localStorage.setItem('token', response.data.token);
+				localStorage.setItem('userId', response.data.id);
+				localStorage.setItem('name', response.data.firstName);
+				props.setIsLoggedIn(true);
+				window.location.assign('/home');
+			} else {
+				localStorage.setItem('error', response.data.message);
+			}
 		} catch (error) {
 			console.log(error);
 		} finally {
-			window.location.assign('/home');
 		}
 	};
 	return (
