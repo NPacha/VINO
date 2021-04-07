@@ -29,21 +29,25 @@ export default function MyFavs(props) {
 				<h1>My Favorites</h1>
 			</header>
 			<div className={'MyFavs'}>
-				{myFavs.map(item => {
-					return (
-						<div className={'winefavs'} key={item._id}>
-							<p>
-								{' '}
-								<br />
-								{item.Name}
-							</p>
+				{myFavs.length ? (
+					myFavs.map(item => {
+						return (
+							<div className={'winefavs'} key={item._id}>
+								<p>
+									{' '}
+									<br />
+									{item.Name}
+								</p>
 
-							<Link to={`/${item._id}`} style={{ textDecoration: 'none' }}>
-								<button>See more</button>
-							</Link>
-						</div>
-					);
-				})}
+								<Link to={`/${item._id}`} style={{ textDecoration: 'none' }}>
+									<button>See more</button>
+								</Link>
+							</div>
+						);
+					})
+				) : (
+					<p id="nofavs">No favorite wines added yet.</p>
+				)}
 			</div>
 		</>
 	);

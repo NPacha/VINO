@@ -61,9 +61,9 @@ export default function ShowWine(props) {
 							<Link to={`/${item._id}/edit`} style={{ textDecoration: 'none' }}>
 								<button>Edit Tasting Notes</button>
 							</Link>
-							{/* <Link to={`/addphoto`} style={{ textDecoration: 'none' }}>
-							<button>Add Photo</button>
-						</Link> */}
+							<Link to={`/addphoto`} style={{ textDecoration: 'none' }}>
+								<button>Add Photo</button>
+							</Link>
 							{/* <AddPhoto images={images} setImages={setImages} /> */}
 							<button onClick={handleDelete}>Delete</button>
 							<Link to={`/myfavs`} style={{ textDecoration: 'none' }}>

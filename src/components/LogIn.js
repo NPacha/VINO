@@ -7,6 +7,8 @@ export default function LogInForm(props) {
 		password: ''
 	});
 
+	const [error, setError] = useState();
+
 	useEffect(() => {
 		if (localStorage.token) {
 			props.setIsLoggedIn(true);
@@ -37,7 +39,8 @@ export default function LogInForm(props) {
 				props.setIsLoggedIn(true);
 				window.location.assign('/home');
 			} else {
-				localStorage.setItem('error', response.data.message);
+				// localStorage.setItem('error', response.data.message);
+				setError('Incorrect username or password, please try again');
 			}
 		} catch (error) {
 			console.log('myerror' + error);
@@ -63,6 +66,7 @@ export default function LogInForm(props) {
 					value={state.password}
 					onChange={handleInput}
 				/>
+				<p>{error}</p>
 
 				<input value="Submit" type="submit" onClick={handleLogIn} />
 				<br />
