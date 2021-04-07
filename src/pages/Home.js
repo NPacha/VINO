@@ -75,6 +75,7 @@ export default function App(props) {
 				Varietal: newWine['item'].Varietal,
 				Country: newWine['item'].Country,
 				Province: newWine['item'].Province,
+				Type: newWine['item'].Type,
 				MyTastingNotes: ''
 			}
 		});

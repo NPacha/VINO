@@ -54,6 +54,7 @@ export default function ShowWine(props) {
 							<p>Varietal: {item.Varietal}</p>
 							<p>Country: {item.Country}</p>
 							<p>Province: {item.Province}</p>
+							<p>Type: {item.Type}</p>
 							<p>My Tasting Notes: {item.MyTastingNotes}</p>
 							<p>Photo: </p>
 
