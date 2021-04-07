@@ -25,11 +25,12 @@ export default function LogInForm(props) {
 	const handleLogIn = async event => {
 		event.preventDefault();
 		try {
-			const response = await axios.post('http://localhost:3000/users/login', {
+			const response = await axios.post('/users/login', {
 				email: state.email,
 				password: state.password
 			});
 			if (response.data.token) {
+				localStorage.clear();
 				localStorage.setItem('token', response.data.token);
 				localStorage.setItem('userId', response.data.id);
 				localStorage.setItem('name', response.data.firstName);
@@ -44,7 +45,7 @@ export default function LogInForm(props) {
 		}
 	};
 	return (
-		<div>
+		<div id="login">
 			<h2>Log In</h2>
 			<form>
 				<label htmlFor="email">Email</label>

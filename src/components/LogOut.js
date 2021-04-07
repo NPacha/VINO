@@ -7,8 +7,8 @@ export default function LogOut(props) {
 		window.location.assign('/home');
 	};
 	return (
-		<div>
-			<h2>Log Out</h2>
+		<div id="logout">
+			<h2>See you soon! Cheers!</h2>
 
 			<form>
 				<input value="Log Out" type="submit" onClick={handleLogOut} />

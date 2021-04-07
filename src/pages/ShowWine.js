@@ -14,7 +14,7 @@ export default function ShowWine(props) {
 	useEffect(() => {
 		(async () => {
 			try {
-				const response = await fetch(`api/wines/${props.match.params.id}`); //Just like req.params on the backend....The location of where that params is on the front end for react.
+				const response = await fetch(`/api/wines/${props.match.params.id}`); //Just like req.params on the backend....The location of where that params is on the front end for react.
 				const data = await response.json();
 				console.log(data.favoriteWines);
 				setWine([data]);

@@ -90,6 +90,10 @@ export default function App(props) {
 			// const newWine = await response.json();
 		} catch (error) {
 			console.error(error);
+		} finally {
+			<a id="back2Top" href="#">
+				<i class="arrow up" style={{ display: grid }}></i>
+			</a>;
 		}
 	};
 
@@ -141,9 +145,7 @@ export default function App(props) {
 					);
 				})}
 			</div>
-			<a id="back2Top" href="#">
-				<img src="http://www.clker.com/cliparts/B/5/C/M/6/i/right-grey-arrow.svg" />
-			</a>
+
 			<Footer />
 		</>
 	);

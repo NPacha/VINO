@@ -28,15 +28,12 @@ export default function SignUp(props) {
 	const handleSignUp = async event => {
 		event.preventDefault();
 		try {
-			const response = await axios.post(
-				'http://localhost:3000/users/register',
-				{
-					firstName: state.firstName,
-					lastName: state.lastName,
-					email: state.email,
-					password: state.password
-				}
-			);
+			const response = await axios.post('/users/register', {
+				firstName: state.firstName,
+				lastName: state.lastName,
+				email: state.email,
+				password: state.password
+			});
 			localStorage.setItem('token', response.data.token);
 			localStorage.setItem('userId', response.data.id);
 			localStorage.setItem('name', response.data.firstName);
@@ -44,13 +41,12 @@ export default function SignUp(props) {
 			console.log(err);
 		} finally {
 			props.setIsLoggedIn(true);
-
 			window.location.assign('/home');
 		}
 	};
 
 	return (
-		<div>
+		<div id="SignUp">
 			<h2>Sign Up</h2>
 			<form>
 				<label htmlFor="firstName">First Name</label>
@@ -77,7 +73,10 @@ export default function SignUp(props) {
 					onChange={handleInput}
 				/>
 
-				<label htmlFor="password">Password</label>
+				<label htmlFor="password">
+					Password <br />
+					<p style={{ fontSize: '10px' }}>**Must be at least 8 characters</p>
+				</label>
 				<input
 					type="password"
 					name="password"

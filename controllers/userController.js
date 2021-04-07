@@ -68,7 +68,7 @@ userRouter.post('/login', async(req, res) => {
                 username: foundUser.email
             })
         } else {
-            res.status(400).json({
+            res.status(200).json({
                 message: 'User entered incorrect Password or User Does Not Exist'
             })
         }
