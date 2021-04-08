@@ -8,7 +8,6 @@ import AddPhoto from '../components/AddPhoto';
 
 export default function ShowWine(props) {
 	const [wine, setWine] = useState([]);
-	const [images, setImages] = useState([]);
 
 	//we are using useEffect so we can go grab some data that we need from the backend
 	useEffect(() => {
@@ -64,7 +63,7 @@ export default function ShowWine(props) {
 							<Link to={`/addphoto`} style={{ textDecoration: 'none' }}>
 								<button>Add Photo</button>
 							</Link>
-							{/* <AddPhoto images={images} setImages={setImages} /> */}
+							<AddPhoto />
 							<button onClick={handleDelete}>Delete</button>
 							<Link to={`/myfavs`} style={{ textDecoration: 'none' }}>
 								<button>Back to Favs</button>

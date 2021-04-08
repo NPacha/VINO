@@ -4,16 +4,18 @@ import ImageUploading from 'react-images-uploading';
 export default function WineInfo(props) {
 	const maxNumber = 3;
 
+	const [images, setImages] = useState([]);
+
 	const onChange = (imageList, addUpdateIndex) => {
 		console.log(imageList, addUpdateIndex);
-		props.setImages(imageList);
-		console.log(props.images);
+		setImages(imageList);
+		console.log(images);
 	};
 	return (
 		<div className="App">
 			<ImageUploading
 				multiple
-				value={props.images}
+				value={images}
 				onChange={onChange}
 				maxNumber={maxNumber}
 				dataURLKey="data_url"
