@@ -9,6 +9,7 @@ const wineSchema = new Schema ({
     Country: String, 
     Province: String,
     Type: String,
+    Photo: String,
     MyTastingNotes: String
 
 })

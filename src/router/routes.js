@@ -11,11 +11,6 @@ import AddPhoto from '../components/AddPhoto';
 
 const routes = [
 	{
-		Component: AddPhoto,
-		key: 'AddPhoto',
-		path: '/addphoto'
-	},
-	{
 		Component: SignUp,
 		key: 'SignUp',
 		path: '/register'
@@ -44,6 +39,11 @@ const routes = [
 		Component: MyFavs,
 		key: 'MyFavs',
 		path: '/myfavs'
+	},
+	{
+		Component: AddPhoto,
+		key: 'AddPhoto',
+		path: '/:id/addphoto'
 	},
 	{
 		Component: UpdateNotes,

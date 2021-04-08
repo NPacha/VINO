@@ -1,57 +1,41 @@
 import React, { useState } from 'react';
-import ImageUploading from 'react-images-uploading';
+import Axios from 'axios';
+import { Image } from 'cloudinary-react';
 
-export default function WineInfo(props) {
-	const maxNumber = 3;
+export default function AddPhoto() {
+	const [imageSelected, setImageSelected] = useState('');
 
-	const [images, setImages] = useState([]);
+	const [imageURL, setImageURL] = useState('');
 
-	const onChange = (imageList, addUpdateIndex) => {
-		console.log(imageList, addUpdateIndex);
-		setImages(imageList);
-		console.log(images);
+	const uploadImage = () => {
+		const formData = new FormData();
+		formData.append('file', imageSelected);
+		formData.append('upload_preset', 'd34rwz4i');
+
+		Axios.post(
+			'https://api.cloudinary.com/v1_1/ddrc5yh7v/image/upload',
+			formData
+		).then(response => {
+			console.log(response);
+			console.log(response.data.url);
+			setImageURL(response.data.url);
+		});
 	};
+
 	return (
-		<div className="App">
-			<ImageUploading
-				multiple
-				value={images}
-				onChange={onChange}
-				maxNumber={maxNumber}
-				dataURLKey="data_url"
-			>
-				{({
-					imageList,
-					onImageUpload,
-					onImageRemoveAll,
-					onImageUpdate,
-					onImageRemove,
-					isDragging,
-					dragProps
-				}) => (
-					// write your building UI
-					<div className="upload__image-wrapper">
-						<button
-							style={isDragging ? { color: 'red' } : undefined}
-							onClick={onImageUpload}
-							{...dragProps}
-						>
-							Click or Drop here
-						</button>
-						&nbsp;
-						<button onClick={onImageRemoveAll}>Remove all images</button>
-						{imageList.map((image, index) => (
-							<div key={index} className="image-item">
-								<img src={image['data_url']} alt="" width="100" />
-								<div className="image-item__btn-wrapper">
-									<button onClick={() => onImageUpdate(index)}>Update</button>
-									<button onClick={() => onImageRemove(index)}>Remove</button>
-								</div>
-							</div>
-						))}
-					</div>
-				)}
-			</ImageUploading>
+		<div>
+			<input
+				type="file"
+				onChange={event => {
+					setImageSelected(event.target.files[0]);
+				}}
+			/>
+			<button onClick={uploadImage}>Upload Image</button>
+
+			<Image
+				cloudName="ddrc5yh7v"
+				publicId="https://api.cloudinary.com/v1_1/ddrc5yh7v/image/upload/ifeuro592wvtk5ccexhj.jpg"
+			/>
 		</div>
 	);
 }
