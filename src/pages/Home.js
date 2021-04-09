@@ -8,8 +8,9 @@ import { Link, animateScroll as scroll } from 'react-scroll';
 export default function App(props) {
 	const Scroll = require('react-scroll');
 	const scroller = Scroll.scroller;
-	const videoSource =
+	let videoSource =
 		'https://res.cloudinary.com/durki4y94/video/upload/v1613607063/wine_pouring_in_slowmotion1_yljxjs.mp4';
+	
 
 	const [query, updateQuery] = useState({
 		baseURL: 'https://quiniwine.com/api/pub/wineKeywordSearch/',
@@ -98,14 +99,24 @@ export default function App(props) {
 		}
 	};
 
+	if (window.innerWidth > 736 ){
+		 videoSource =
+		'https://res.cloudinary.com/durki4y94/video/upload/v1613607063/wine_pouring_in_slowmotion1_yljxjs.mp4';
+	} else {
+		videoSource = null;
+	}
+
 	return (
 		<>
 			<NavBar routes={routes} />
 			<div className="HomePage">
 				<div className="Container">
+					
+						
 					<video autoPlay loop controls>
 						<source src={videoSource} type="video/mp4" />
 					</video>
+
 					<div className="Content">
 						{localStorage.name ? (
 							<div className="SubContent">
