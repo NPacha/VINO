@@ -1,4 +1,4 @@
-# VINO
+# VINO 2.0
 
 ### App Demo: www.linkegoeshere.com
 
@@ -49,6 +49,8 @@ As a user I want to be able to upload a picture of the bottle of the wine to cor
 
 As a user I want to have my favorite wines categorized by white, red, and rose. 
 
+As a user, I want to be able to navigate this website from my mobile phone.
+
 #### Development Plan 
 
 description of your development plan 
@@ -76,21 +78,22 @@ description of your development plan
 #### Stretch goals
 
 * Stretch goals ONE
-* Include professional css styling
+* Include professional css styling and mobile responsive
 * Stretch goals Two
-* Be able to store user data in database
+* Be able to connect two databases
 * Stretch goals Three 
-* Incorporate login page (not met, tbd in Version 2)
+* Incorporate login page 
 * Stretch goals Four
-* Sort wines by red, white, and rose (not met, tbd in Version 2)
+* Sort wines by red, white, and rose (not met, tbd in Version 3)
+  
 
 ## Challenges:
 
-The main challenge that I faced was to get this application to deploy on Heroku. Additionally, to create a professional app with useful feature and great user interface in a short amount of time. One of the other main challenges that I was able to overcome and was proud of, was being able to connect my front end with the backend, and figuring out how to store the data on the backend. 
+The main challenge that I faced was to get this application to deploy on Heroku. Additionally, to create a professional app with useful feature and great user interface in a short amount of time. One of the other main challenges that I was able to overcome and was proud of, was being able to connect my front end with the backend, and figuring out how to connect two databases on the backend, as well as how to make user authentication happen.  
 
 ## Future Versions:
 
-In the future versions of this app, I am excited to incorporate a log in and sign up page, a feature that allows the user to upload their own picture of the wine/the bottle, and categorizing the wines on the favorite page by red, white, and rose. 
+In the future versions of this app, I am excited to polish the CSS more for mobile responsiveness, clean up the UX/UI even more, categorizing the wines on the favorite page by red, white, and rose, and begin creating the app version of this website with React Native. 
 
 
 
