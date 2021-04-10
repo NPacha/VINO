@@ -1,6 +1,6 @@
 # VINO 2.0
 
-### App Demo: www.linkegoeshere.com
+### App Demo: https://myvino.herokuapp.com/
 
 ---
 ![Alt Text](https://media.giphy.com/media/l3q2wCnKRThy8ltxS/giphy.gif)
@@ -97,4 +97,4 @@ In the future versions of this app, I am excited to polish the CSS more for mobi
 
 
 
-### App Demo: www.linkegoeshere.com
+### App Demo: https://myvino.herokuapp.com/
